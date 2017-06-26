@@ -1,0 +1,46 @@
+<div class="intro">
+  <form>
+
+    <div class="btn-group">
+      <label class="control-label"  for="Genre">Movie Genre</label>
+      <div class="col-lg-6 col-lg-8">
+        <select id="Genre" class="form-control" #genreVal>
+          <option>Comedy</option>
+          <option>Drama</option>
+          <option>Action</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <label class="control-label"  for="Year">Movie Year</label>
+      <div class="col-lg-6 col-lg-8">
+        <select id="Year" class="form-control" #yearVal>
+          <option>1993</option>
+          <option>2008</option>
+          <option>1986</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="btn-group">
+    <button
+      class="btn btn-success"
+      type="submit"
+      (click)="searchItemByGenreAndYear()">Search</button>
+    </div>
+
+  </form>
+  <app-movie-details
+    *ngIf="movieSelectedWithGenreAndYearEnable;
+      else
+          hintEmpty"
+    [movie]="movieSelectedWithGenreAndYear">
+
+  </app-movie-details>
+
+  <ng-template #hintEmpty>
+    <h4>No results to far</h4>
+  </ng-template>
+
+</div>

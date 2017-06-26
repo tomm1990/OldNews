@@ -1,0 +1,14 @@
+form{
+  padding: 1%;
+}
+
+.control-label{
+  padding-top: 8px;
+  float: left;
+  line-height:normal;
+}
+
+.btn-group{
+  width : 100%;
+  padding: 1%;
+}

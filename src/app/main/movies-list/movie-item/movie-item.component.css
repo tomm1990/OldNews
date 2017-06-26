@@ -1,0 +1,10 @@
+.item{
+  cursor: pointer;
+  margin: 1% 2% 0% 2%;
+}
+
+.gr{
+  color : #808080;
+  font-size: 80%;
+  font-weight: 400;
+}

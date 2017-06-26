@@ -1,0 +1,30 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body{
+  background-color:#f0f0f0;
+  width: 85%;
+  margin: 0px auto;
+}
+
+app-header, app-main{
+  width: 100%;
+  display: block;
+  float: left;
+}
+
+app-header{
+  background-color : grey;
+}
+
+app-main{
+  margin-left: 5%;
+  width: 90%;
+}
+
+.clear{
+  clear:both;
+}

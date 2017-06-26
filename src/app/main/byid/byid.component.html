@@ -1,0 +1,27 @@
+<div class="intro">
+  <form>
+
+    <div class="btn-group">
+      <label class="control-label"  for="Movie">Movie ID</label>
+      <div class="col-lg-6 col-lg-4">
+        <select id="Movie" class="form-control" #idVal>
+          <option>123</option>
+          <option>344</option>
+          <option>678</option>
+        </select>
+      </div>
+      <button
+        class="btn btn-success"
+        type="submit"
+        (click)="searchItem()">Search</button>
+      <div class="clear"></div>
+    </div>
+  </form>
+
+  <app-movie-details
+    *ngIf="movieSelectedWithId"
+    [movie]="movieSelectedWithId">
+
+  </app-movie-details>
+
+</div>

@@ -1,0 +1,18 @@
+<div class="intro">
+
+  <app-movie-details
+    *ngIf="movieSelected"
+    [movie]="movieSelected">
+  </app-movie-details>
+
+</div>
+
+<div class="content">
+
+  <app-movies-list
+    (movieSlected)="onMovieSelected($event)">
+  </app-movies-list>
+
+</div>
+
+<div class="clear"></div>

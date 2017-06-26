@@ -1,0 +1,63 @@
+.detail{
+}
+
+header , main {
+  width : 100%;
+  display: block;
+  float: left;
+}
+
+header {
+  padding: 2%;
+  background-color: #303030;
+  color : #fff;
+}
+
+header .headers ,header .whitestar  {
+    display: block;
+    float: left;
+}
+
+header > .headers {
+  padding-top: 2%;
+  width : 75%;
+}
+
+.headers h1 , .headers h2  {
+  margin-top: 0px;
+  padding-bottom: 0px;
+  font-family:  Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  padding-left: 2%;
+}
+
+.gr{
+  font-weight: 400;
+  font-size: 60%;
+  color : #909090;
+}
+
+.headers h2{
+  font-size: 110%;
+}
+
+.whitestar {
+  height : 100px;
+  background: url('../../../assets/images/white_star.png') no-repeat;
+  width : 5%;
+  background-size: 30px;
+  background-position: center;
+}
+
+main{
+  width : 100%;
+  padding: 3%;
+}
+
+main h3, main h4{
+  padding-bottom: 0px;
+  font-weight: 700;
+  font-size: 80%;
+  color : #909090;
+
+}
