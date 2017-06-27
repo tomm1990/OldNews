@@ -7,7 +7,7 @@ import 'rxjs/add/operator/toPromise';
 // main service module
 @Injectable()
 export class MovieService {
-  itemSelected = new EventEmitter<Movie>();
+  movieSelected = new EventEmitter<Movie>();
   itemAdded = new EventEmitter<Movie[]>();
 
   herokuUrl:String = "https://oldvod.herokuapp.com";
@@ -39,11 +39,11 @@ export class MovieService {
   }
 
   // Gel all movies (promise)
-  getAllMoviesRaw(){
+  getAllMoviesRaw() : Promise<Movie[]> {
     console.log(`MovieService::getAllMoviesRaw()`);
     return this.http.get(`${this.herokuUrl}/getAllMovies`)
       .toPromise()
-      .then(response => response.json() as Movie)
+      .then(response => response.json() as Movie[])
       .catch(err => err.json());
   }
 

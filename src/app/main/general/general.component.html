@@ -1,8 +1,8 @@
 <div class="intro">
 
   <app-movie-details
-    *ngIf="movieSelected"
-    [movie]="movieSelected">
+    *ngIf="movieToView"
+    [movie]="movieToView">
   </app-movie-details>
 
 </div>
@@ -10,7 +10,7 @@
 <div class="content">
 
   <app-movies-list
-    (movieSlected)="onMovieSelected($event)">
+    (movieSelected)="onMovieSelected($event)">
   </app-movies-list>
 
 </div>

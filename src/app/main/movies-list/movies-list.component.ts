@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {Movie} from "../movie.model";
 import {Cast} from "../cast.model";
 import {MovieService} from "../movie.service";
@@ -9,7 +9,8 @@ import {MovieService} from "../movie.service";
   styleUrls: ['movies-list.component.css']
 })
 export class MoviesListComponent implements OnInit {
-  movieSelected : Movie;
+
+  @Output() movieSelected = new EventEmitter<Movie>();
   movies:Movie[];
 
   // Test dummy
@@ -22,14 +23,17 @@ export class MoviesListComponent implements OnInit {
   constructor(private movieService:MovieService) { }
 
   ngOnInit() {
-    this.movies = this.movieService.getAllMovies();
-    this.movieService.itemAdded.subscribe((movie:Movie[])=>{
-      this.movies = movie;
-    });
+    this.movieService.getAllMoviesRaw()
+      .then((move:Movie[])=>{
+        this.movies = move;
+        //this.movieSelected.emit(move);
+
+      });
   }
 
   onMovieSelected(movie:Movie){
     console.log(movie);
-    this.movieSelected = movie;
+    // this.movieSelected = movie;
+    this.movieSelected.emit(movie);
   }
 }

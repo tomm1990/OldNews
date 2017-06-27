@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {MovieService} from "../movie.service";
 import {Movie} from "../movie.model";
 
@@ -8,28 +8,20 @@ import {Movie} from "../movie.model";
   styleUrls: ['general.component.css']
 })
 export class GeneralComponent implements OnInit {
-  movieSelected:Movie;
+  movieToView : Movie;
 
   constructor(private movieService:MovieService) { }
 
   ngOnInit() {
-    this.movieService.itemSelected.subscribe(
-      (movie:Movie)=>{
-        this.movieSelected = movie;
-      });
-    this.initMovie();
-  }
-
-  initMovie() {
     console.log(`GeneralComponent :: initMovie() `);
     this.movieService.getAllMoviesRaw()
-      .then((movie : Movie) => {
-        if (movie.constructor.name == "Array") {
-          this.movieSelected = movie[0];
-        }
-        else {
-          this.movieSelected = null;
-        }
+      .then((movie : Movie[]) => {
+        if(movie[0]) this.movieToView=movie[0];
       });
+  }
+
+  onMovieSelected(movie:Movie){
+    console.log(movie);
+    this.movieToView = movie;
   }
 }
