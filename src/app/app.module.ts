@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { YoutubePlayerModule } from 'ng2-youtube-player';
+
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -16,6 +18,7 @@ import { MovieItemComponent } from './main/movies-list/movie-item/movie-item.com
 import { MainComponent } from './main/main.component';
 
 import {MovieService} from './main/movie.service';
+import { PlayerComponent } from './player/player.component';
 
 const appRoutes : Routes = [
  { path : '' , redirectTo : 'general',pathMatch:'full'},
@@ -36,11 +39,13 @@ const appRoutes : Routes = [
     MoviesListComponent,
     MovieDetailsComponent,
     MovieItemComponent,
-    MainComponent
+    MainComponent,
+    PlayerComponent
   ],
   imports: [
-    RouterModule.forRoot(appRoutes),
     BrowserModule,
+    YoutubePlayerModule,
+    RouterModule.forRoot(appRoutes),
     FormsModule,
     HttpModule
   ],

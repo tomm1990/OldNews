@@ -1,5 +1,4 @@
 import {Movie} from "./movie.model";
-import {Cast} from "./cast.model";
 import {EventEmitter, Injectable} from "@angular/core";
 import {Http, Response} from "@angular/http";
 import 'rxjs/add/operator/toPromise';
@@ -7,7 +6,6 @@ import 'rxjs/add/operator/toPromise';
 // main service module
 @Injectable()
 export class MovieService {
-  movieSelected = new EventEmitter<Movie>();
   itemAdded = new EventEmitter<Movie[]>();
 
   herokuUrl:String = "https://oldvod.herokuapp.com";

@@ -14,7 +14,7 @@ export class BygenyearComponent implements OnInit {
   @ViewChild('genreVal') genreVal : ElementRef;
   @ViewChild('yearVal') yearVal : ElementRef;
 
-  movieSelectedWithGenreAndYear:Movie;
+  movieSelectedWithGenreAndYear : Movie;
   movieSelectedWithGenreAndYearEnable : boolean;
 
   constructor(private movieService : MovieService) { }
